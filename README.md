@@ -87,3 +87,33 @@ This is detailed steps to deploy the application on GKE using Terraform, Kuberne
 * GCP account
 * GCP project
 
+
+## Installation
+
+### Setup Infrastructure:
+
+1. install Jenkins on your local machine or on a VM
+   ```sh
+   sudo apt update
+   sudo apt install openjdk-11-jdk
+   wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+   sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+   sudo apt update
+   sudo apt install jenkins
+   ```
+   you can access Jenkins using the following URL
+   ```sh
+   http://<Jenkins_IP>:8080
+   ```
+   you can get the Jenkins IP using the following command
+   ```sh
+   sudo systemctl status jenkins
+   ```
+
+2. install Terraform on your local machine or on a VM
+   ```sh
+   sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+   curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+   sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+   sudo apt-get update && sudo apt-get install terraform
+   ```
