@@ -160,3 +160,68 @@ This is detailed steps to deploy the application on GKE using Terraform, Kuberne
 
 
 Now all the infrastructure is ready, let's deploy our application on it.
+
+<br>
+
+### Deploy Application:
+
+1. Install Google Cloud SDK (if not installed) -- on your machine terminal 
+    ```sh
+    sudo apt-get install apt-transport-https ca-certificates gnupg
+    ```
+    ```sh
+    export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+    ```
+    ```sh
+    echo "deb https://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+    ```
+    ```sh
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    ```
+    ```sh
+    sudo apt-get update && sudo apt-get install google-cloud-sdk
+    ```
+    ```sh
+    gcloud init
+    ```
+
+
+2. Install Docker on your machine
+   ```sh
+   sudo apt-get update
+   sudo apt-get install ca-certificates curl gnupg
+   sudo install -m 0755 -d /etc/apt/keyrings
+   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   ```
+
+    ```sh
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    ```
+
+3. Install kubectl on your machine
+   ```sh
+   sudo apt-get install kubectl
+   ```
+
+
+4. Upload you service account key to Jenkins
+<br>
+
+   From Manage Jenkins > Manage Credentials > Global Credentials > Add Credentials 
+   Choose secret file and upload the key.json file
+
+   // Note: in my case I called it "gcp-secret"
+
+
+5. Create a new Jenkins pipeline job
+<br>
+
+   Create 2 new pipeline jobs, one for the infrastructure and the other for the containerized application
+
+   the second job will be triggered after the first one is finished
+
+    // Note: the second pipe line called "configure_infrastructure" and it will be triggered after the first one is finished.
+
+### Seems like we are done 🎉
+<br>
