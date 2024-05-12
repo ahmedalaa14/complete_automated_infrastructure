@@ -38,6 +38,8 @@
             <li><a href="#deploy-application">Deploy Application</a></li>
           </ul>          
     </li>
+  </ol>
+</details> 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
