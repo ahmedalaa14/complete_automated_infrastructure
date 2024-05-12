@@ -10,9 +10,31 @@
 <h3 align="center">infrastructure on GKE using Terraform & Jenkins</h3>
 
   <p align="center">
-    deploy a Node-JS Application connected with high available MongoDB cluster on GKE using Terraform and Jenkins
+    deploy a Node-JS Application connected with high available MongoDB cluster on GKE using Terraform and Jenkins.
     <br />
     <br />
     <br />
   </p>
 </div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        </ul>
+    <li><a href="#installation">Installation</a>
+        <ul>
+            <li><a href="#setup-infrastructure">Setup Infrastructure</a></li>
+            <li><a href="#deploy-application">Deploy Application</a></li>
+          </ul>          
+    </li>    
