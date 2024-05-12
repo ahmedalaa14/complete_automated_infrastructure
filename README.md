@@ -37,4 +37,41 @@
             <li><a href="#setup-infrastructure">Setup Infrastructure</a></li>
             <li><a href="#deploy-application">Deploy Application</a></li>
           </ul>          
-    </li>    
+    </li>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+
+
+This project is a simple NodeJS application connected to a MongoDB cluster on GKE using Terraform and Jenkins for CI/CD, it can grantee and with 10 mins you can build an infrastructure configured, up and running.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+* ![Docker][Docker]
+* ![Kubernetes][Kubernetes]
+* ![GoogleCloud][GoogleCloud]
+* ![Terraform][Terraform]
+* ![NodeJS][NodeJS]
+* ![MongoDB][MongoDB]
+* ![Jenkins][Jenkins]
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+This is detailed steps to deploy the application on GKE using Terraform, Kubernetes and Jenkins, including tricks in the middle.
+
+### Prerequisites
+
+* Terraform
+* GCP account
+* GCP project
