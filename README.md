@@ -117,3 +117,46 @@ This is detailed steps to deploy the application on GKE using Terraform, Kuberne
    sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
    sudo apt-get update && sudo apt-get install terraform
    ```
+3. Create a service account for Terraform
+   ```sh
+   gcloud iam service-accounts create terraform --display-name "Terraform admin account"
+   ```
+
+   -- Create and assign role to Service Account
+
+   ```sh
+   gcloud iam service-accounts keys create key.json --iam-account terraform@<Project_ID>.iam.gserviceaccount.com
+   ```
+   ```sh
+   export GOOGLE_APPLICATION_CREDENTIALS=key.json
+   ```
+   ```sh
+   gcloud projects add-iam-policy-binding <Project_ID> --member serviceAccount:terraform@<Project_ID>.iam.gserviceaccount.com --role roles/owner
+   ```
+
+   -- Enable necessary APIs for Terraform
+
+
+   ```sh
+   gcloud services enable cloudresourcemanager.googleapis.com
+   ```
+   ```sh
+   gcloud services enable cloudbilling.googleapis.com
+   ```
+   ```sh
+   gcloud services enable iam.googleapis.com
+   ```
+   ```sh
+   gcloud services enable compute.googleapis.com
+   ```
+   ```sh
+   gcloud services enable container.googleapis.com
+   ```
+   ```sh
+   gcloud services enable servicenetworking.googleapis.com
+   ```
+      
+
+
+
+Now all the infrastructure is ready, let's deploy our application on it.
