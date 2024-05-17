@@ -12,7 +12,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">infrastructure on GKE using Terraform & Jenkins</h3>
+<h3 align="center">infrastructure on GKE using Terraform & Jenkins.</h3>
 
   <p align="center">
     deploy a Node-JS Application connected with high available MongoDB cluster on GKE using Terraform and Jenkins
